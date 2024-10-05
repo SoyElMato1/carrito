@@ -1,0 +1,20 @@
+ion-toolbar {
+  justify-content: center; /* Centra todo el contenido del toolbar */
+}
+
+ion-title {
+  margin: 0; /* Asegura que no haya margen que afecte el centrado */
+  text-align: center; /* Asegura que el texto esté centrado */
+}
+// ion-img {
+//   width: 100px; /* Ancho deseado */
+//   height: 100px; /* Altura deseada */
+//   object-fit: cover; /* Asegura que la imagen mantenga la relación de aspecto */
+// }
+/* Fondo de inicio  */
+.fondo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Cambiado a cover para llenar toda la pantalla */
+  background-image: url(../home/FootosEstaticas/FondoDePatntalla.png);
+}

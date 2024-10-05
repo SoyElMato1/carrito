@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <!-- Botón de volver hacia atrás -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- Botón de volver hacia atrás -->
+    <ion-title class="ion-text-center">GreenMarket</ion-title> <!-- Clase para centrar el título -->
+  </ion-toolbar>
+</ion-header>
+
+ <ion-content>
+  <body class="fondo">
+    <ion-grid >
+      <ion-row class="ion-text-center" >
+        <ion-col size="4" *ngFor="let proveedor of proveedores">
+          <ion-card color="medium">
+            <ion-card-header>
+              <ion-button color="Warning">Hola soy un boton </ion-button>
+              <ion-button color="Warning">Hola soy un boton </ion-button>
+              <ion-card-title>{{ proveedor.nombre }} {{ proveedor.apellido }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Correo: {{ proveedor.correo_electronico }}</p>
+              <p>RUT: {{ proveedor.rut }}-{{ proveedor.dv }}</p>
+              <p>Calificación: {{ proveedor.calificacion_proveedor }}</p>
+              <ion-img [src]="proveedor.imagen_proveedor"></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-infinite-scroll threshold="1500px" (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content>
+        <!-- Contenido para cargar más -->
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </body>
+
+</ion-content>
+
+

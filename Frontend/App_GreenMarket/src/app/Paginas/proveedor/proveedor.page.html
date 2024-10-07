@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <!-- Botón de volver hacia atrás -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- Botón de volver hacia atrás -->
+    <ion-title class="ion-text-center">GreenMarket</ion-title> <!-- Clase para centrar el título -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <body class="fondo">
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="4" *ngFor="let proveedor of proveedores">
+          <ion-card>
+            <ion-card-header style="display: flex; justify-content: space-between; align-items: center;">
+              <ion-card-content class="margen">
+                <div>
+                  <ion-card-title>{{ proveedor.nombre }} {{ proveedor.apellido }}</ion-card-title>
+                  <ion-button (click)=" catalogo_producto()" >Ver productos </ion-button>
+
+                </div>
+              </ion-card-content>
+              <ion-card-content class="margen2">
+                <div>
+                  <ion-img class="proveedor-imagen" [src]="proveedor.imagen_proveedor"></ion-img>
+                </div>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <div class="marggen"></div>
+    </ion-grid>
+
+    <ion-infinite-scroll threshold="1500px" (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content>
+        <!-- Contenido para cargar más -->
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </body>
+</ion-content>

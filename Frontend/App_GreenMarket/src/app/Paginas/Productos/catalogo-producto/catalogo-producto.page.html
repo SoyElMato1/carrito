@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Catalogo_Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1>Catálogo de Productos</h1>
+  <ul>
+    <li *ngFor="let producto of productos">
+      {{ producto.nombre_producto }} - {{ producto.precio }}
+      <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+    </li>
+  </ul>
+</ion-content>
